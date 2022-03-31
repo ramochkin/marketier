@@ -10,7 +10,7 @@ import './css/style.scss';
 import './charts/ChartjsConfig';
 
 // Import pages
-import Dashboard from './pages/Dashboard';
+import Dashboard from './pages/liveChart';
 
 function App() {
 

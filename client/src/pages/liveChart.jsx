@@ -2,8 +2,8 @@ import React, { useState } from 'react';
 
 import Sidebar from '../partials/Sidebar';
 import Header from '../partials/Header';
-import WelcomeBanner from '../partials/dashboard/WelcomeBanner';
-import DashboardCard05 from '../partials/dashboard/DashboardCard05';
+import WelcomeBanner from '../partials/liveChart/WelcomeBanner';
+import LiveChart from '../partials/liveChart/liveChart';
 
 function Dashboard() {
 
@@ -29,7 +29,7 @@ function Dashboard() {
             {/* Cards */}
             <div className="grid grid-cols-12 gap-6">
               {/* Line chart (Real Time Value) */}
-              <DashboardCard05 />
+              <LiveChart />
             </div>
           </div>
         </main>
