@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import Info from '../../utils/Info';
+import Icon from '../../images/icon-01.svg';
 import RealtimeChart from '../../charts/RealtimeChart';
 
 // Import utilities
@@ -16,7 +16,7 @@ function DashboardCard05() {
   const [counter, setCounter] = useState(0);
   const [increment, setIncrement] = useState(0);
   const [range, setRange] = useState(35);
-  
+
   // Dummy data to be looped
   const data = [
     57.81, 57.75, 55.48, 54.28, 53.14, 52.25, 51.04, 52.49, 55.49, 56.87,
@@ -60,7 +60,7 @@ function DashboardCard05() {
     }
     setSlicedLabels(([x, ...slicedLabels]) => [...slicedLabels, new Date()]);
     return () => setIncrement(0)
-  // eslint-disable-next-line react-hooks/exhaustive-deps
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [counter]);
 
   const chartData = {
@@ -85,10 +85,9 @@ function DashboardCard05() {
   return (
     <div className="flex flex-col col-span-full sm:col-span-6 bg-white shadow-lg rounded-sm border border-slate-200">
       <header className="px-5 py-4 border-b border-slate-100 flex items-center">
-        <h2 className="font-semibold text-slate-800">Real Time Value</h2>
-        <Info className="ml-2" containerClassName="min-w-44">
-          <div className="text-sm text-center">Built with <a className="underline" href="https://www.chartjs.org/" target="_blank" rel="noreferrer">Chart.js</a></div>
-        </Info>
+        {/* Icon */}
+        <img src={Icon} width="32" height="32" alt="Icon 01"/>
+        <h2 className="font-semibold text-slate-800">Acme Plus</h2>
       </header>
       {/* Chart built with Chart.js 3 */}
       {/* Change the height attribute to adjust the chart height */}
