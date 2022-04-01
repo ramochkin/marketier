@@ -36,47 +36,51 @@ const resolvers = {
             const token = signToken(user);
             return { token, user };
         },
-        addWatchlist: async (parent, args, context) => {
+        addWatchlist: async (parent, {symbol}, context) => {
 
             if (context.user) {
-                const watchlistItem = await User.findByIdAndUpdate(
-                    { _id: context.user._id },
-                    { $push: { watchlist: args.symbol } },
-                    { new: true }
-                )
-
-                return watchlistItem;
-            }
-            throw new AuthenticationError('Incorrect credentials');
-        },
-        removeWatchlist: async (parent, args, context) => {
-            if (context.user) {
+                
                 const watchlistItem = await User.findOneAndUpdate(
                     { _id: context.user._id },
-                    { $pull: {watchlist: args._id} },
+                    { $push: { watchlist: {symbol} } },
                     { new: true }
                 )
+                
                 return watchlistItem;
             }
             throw new AuthenticationError('Incorrect credentials');
         },
-        addPortfolio: async (parent, args, context) => {
+        removeWatchlist: async (parent,{_id}, context) => {
+            if (context.user) {
+                
+                const watchlistItem = await User.findOneAndUpdate(
+                    { _id: context.user._id },
+                    { $pull: {watchlist: {_id}} },
+                    { new: true }
+                )
+                
+                return watchlistItem;
+            }
+            throw new AuthenticationError('Incorrect credentials');
+        },
+        addPortfolio: async (parent, {symbol, quantity, purchasePrice}, context) => {
 
             if (context.user) {
+
                 const newPortfolio = await User.findOneAndUpdate(
                     { _id: context.user._id },
-                    { $push: { portfolio: args.portfolioData }},
+                    { $push: { portfolio: {symbol, quantity, purchasePrice} }},
                     { new: true }
                 )
                 return newPortfolio
             }
             throw new AuthenticationError('Incorrect credentials');
         },
-        removePortfolio: async (parent, args, context) => {
+        removePortfolio: async (parent, {_id}, context) => {
             if (context.user) {
                 const removePortfolio = await User.findOneAndUpdate(
                     { _id: context.user._id },
-                    { $pull: {portfolio: args._id} },
+                    { $pull: {portfolio: {_id}} },
                     { new: true }
                 )
                 return removePortfolio;
