@@ -26,10 +26,6 @@ app.get('/', (req, res) => {
   res.sendFile(path.join(__dirname, '../client/build/index.html'));
 });
 
-app.listen(PORT, ()=>{
-    console.log("App is listening on: http://localhost:" + PORT)
-})
-
 const startApolloServer = async (typeDefs, resolvers) => {
   await server.start();
   server.applyMiddleware({ app });
@@ -43,4 +39,4 @@ const startApolloServer = async (typeDefs, resolvers) => {
   };
   
 // Call the async function to start the server
-  startApolloServer(typeDefs, resolvers);
+ startApolloServer(typeDefs, resolvers);

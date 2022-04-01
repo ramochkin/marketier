@@ -12,8 +12,8 @@ type User {
 
 type Portfolio {
     _id: ID!
-    symbol: String!
-    quantity: Int!
+    symbol: String
+    quantity: Int
     purchasePrice: Float
 }
 
@@ -44,10 +44,10 @@ type Query {
 type Mutation {
     login( email: String!, password: String! ): Auth
     addUser( name: String!, email: String!, password: String!): Auth
-    addWatchlist( symbol: WatchlistInput!): User
-    removeWatchlist( symbolId: ID!): User
-    addPortfolio( portfolioData: PortfolioInput!): User
-    removePortfolio( portfolioId: ID!): User
+    addWatchlist( symbol: String!): User
+    removeWatchlist( _id: ID!): User
+    addPortfolio( symbol: String!, quantity: Int!, purchasePrice: Float!): User
+    removePortfolio( _id : ID!): User
 }
 `
 

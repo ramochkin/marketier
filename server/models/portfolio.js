@@ -11,7 +11,8 @@ const portfolioSchema = new Schema({
         required: true
     },
     purchasePrice: {
-        type :  Schema.Types.Decimal128,
+        type :  Number,
+        min: 0.01
     }
 });
 
