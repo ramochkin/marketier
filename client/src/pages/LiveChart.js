@@ -4,7 +4,7 @@ import Sidebar from '../partials/Sidebar';
 import Header from '../partials/Header';
 import LiveChart from '../partials/liveChart/liveChart';
 
-function Dashboard() {
+function LiveChart() {
 
   const [sidebarOpen, setSidebarOpen] = useState(false);
 
@@ -35,4 +35,4 @@ function Dashboard() {
   );
 }
 
-export default Dashboard;
+export default LiveChart;
