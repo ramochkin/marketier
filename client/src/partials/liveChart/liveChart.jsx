@@ -5,11 +5,14 @@ import RealtimeChart from '../../charts/RealtimeChart';
 // Import utilities
 import { tailwindConfig, hexToRGB } from '../../utils/Utils';
 
-function DashboardCard05() {
-
-  // IMPORTANT:
-  // Code below is for demo purpose only, and it's not covered by support.
-  // If you need to replace dummy data with real data,
+function liveChart() {
+  useEffect(() => {
+    fetch("https://financialmodelingprep.com/api/v3/historical-chart/1min/AAPL?apikey=430e3d658d7945141a85b4b5f2a6b7da")
+      .then (res => res.json())
+      .then(data => {
+        console.log(data);
+      })
+  }, [])
   // refer to Chart.js documentation: https://www.chartjs.org/docs/latest
 
   // Fake real-time data
@@ -19,12 +22,7 @@ function DashboardCard05() {
 
   // Dummy data to be looped
   const data = [
-    57.81, 57.75, 55.48, 54.28, 53.14, 52.25, 51.04, 52.49, 55.49, 56.87,
-    53.73, 56.42, 58.06, 55.62, 58.16, 55.22, 58.67, 60.18, 61.31, 63.25,
-    65.91, 64.44, 65.97, 62.27, 60.96, 59.34, 55.07, 59.85, 53.79, 51.92,
-    50.95, 49.65, 48.09, 49.81, 47.85, 49.52, 50.21, 52.22, 54.42, 53.42,
-    50.91, 58.52, 53.37, 57.58, 59.09, 59.36, 58.71, 59.42, 55.93, 57.71,
-    50.62, 56.28, 57.37, 53.08, 55.94, 55.82, 53.94, 52.65, 50.25,
+    57.81
   ];
 
   const [slicedData, setSlicedData] = useState(data.slice(0, range));
@@ -41,11 +39,11 @@ function DashboardCard05() {
 
   const [slicedLabels, setSlicedLabels] = useState(generateDates().slice(0, range).reverse());
 
-  // Fake update every 2 seconds
+  // Fake update every 60 seconds
   useEffect(() => {
     const interval = setInterval(() => {
       setCounter(counter + 1);
-    }, 2000);
+    }, 60000);
     return () => clearInterval(interval)
   }, [counter]);
 
@@ -89,11 +87,10 @@ function DashboardCard05() {
         <img src={Icon} width="32" height="32" alt="Icon 01"/>
         <h2 className="font-semibold text-slate-800">Acme Plus</h2>
       </header>
-      {/* Chart built with Chart.js 3 */}
       {/* Change the height attribute to adjust the chart height */}
       <RealtimeChart data={chartData} width={595} height={248} />
     </div>
   );
 }
 
-export default DashboardCard05;
+export default liveChart;
