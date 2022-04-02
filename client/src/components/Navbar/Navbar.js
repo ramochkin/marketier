@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from 'react'
+import { Link } from 'react-router-dom'
 import './Navbar.css'
+
 
 export default function Navbar() {
     const [toggleMenu, setToggleMenu] = useState(false)
@@ -24,14 +26,17 @@ export default function Navbar() {
 
     }, [])
 
+
     return (
         <nav>
             {(toggleMenu || screenWidth > 500) && (
                 <ul className="navbarLinks">
-                    <li className="leftLink">News</li>
-                    <li className="leftLink">Stocks</li>
-                    <li className="leftLink">Currencies</li>
-                    <li className="leftLink">Cryptocurrencies</li>
+                    <li className="leftLink" ><Link to="/">Home</Link></li>
+                    <li className="leftLink" ><Link to="/news">News</Link></li>
+                    <li className="leftLink"><Link to="/stocks">Stocks</Link></li>
+                    <li className="leftLink"><Link to="/currencies">Currencies</Link></li>
+                    <li className="leftLink"><Link to="/crypto">Cryptocurrencies</Link></li>
+
                 </ul>
             )}
 

@@ -12,7 +12,9 @@ import Navbar from './components/Navbar/Navbar';
 import HomePage from './pages/HomePage';
 import NewsPage from './pages/NewsPage';
 import UserPage from './pages/UserPage';
-
+import StockPage from './pages/StockPage';
+import CurrenciesPage from './pages/CurrenciesPage';
+import CryptoPage from './pages/CryptoPage';
 // import HomePage
 
 const httpLink = createHttpLink({
@@ -55,6 +57,18 @@ function App() {
               <Route
                 path='/user'
                 element={<UserPage />}
+              />
+              <Route
+                path='/stocks'
+                element={<StockPage />}
+              />
+              <Route
+                path='/currencies'
+                element={<CurrenciesPage />}
+              />
+              <Route
+                path='/crypto'
+                element={<CryptoPage />}
               />
               <Route
                 path='*'

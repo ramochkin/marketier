@@ -1,8 +1,9 @@
 nav {
-    position: fixed;
+    /* position: fixed; */
     top: 0%;
     width: 100%;
     height: 50px;
+    display: block;
 }
 
 .navbarLinks {
@@ -14,7 +15,7 @@ nav {
     position: relative;
 }
 
-.leftLinks {
+.leftLink {
     margin-right: 20px;
     font-size: 20px;
     color: #000;
@@ -40,15 +41,21 @@ nav {
 
 @media screen and (max-width: 500px){
 
-    .list {
+    nav {
+        /* position: fixed; */
+        top: 0%;
+        width: 100%;
+        display: block;
+    }
+    .navbarLinks {
         flex-direction: column;
         height: auto;
     }
-    .items:nth-child(1){
+    .leftLink:nth-child(1){
         border-top: 1px solid rgba(255, 255, 255, 0.555);
         margin-top: 50px;
     }
-    .items {
+    .leftLink {
         width: 100%;
         border-top: 1px solid rgba(255, 255, 255, 0.555);
         text-align: center;
