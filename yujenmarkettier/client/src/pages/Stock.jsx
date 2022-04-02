@@ -1,13 +1,13 @@
 import React, { useState, useEffect } from 'react';
 
-import GainerCard from "../components/partials/GainerCard";
-import LoserCard from "../components/partials/LoserCard";
-import NewsCard from "../components/partials/NewsCard";
+import GainerCard from "../partials/dashboard/GainerCard";
+import LoserCard from "../partials/dashboard/LoserCard";
+import NewsCard from "../partials/dashboard/NewsCard";
 
 import "../css/GainerAndLoser.css"
 
 
-function HomePage() {
+function Stock() {
     const [gainers, setGainers] = useState(null);
     const [losers, setLosers] = useState(null);
     const [news, setNews] = useState(null);
@@ -72,4 +72,4 @@ function HomePage() {
     )
 }
 
-export default HomePage;
+export default Stock;
