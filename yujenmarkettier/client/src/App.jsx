@@ -10,7 +10,6 @@ import './css/style.scss';
 import './charts/ChartjsConfig';
 
 // Import pages
-import Dashboard from './pages/Dashboard';
 import Stock from './pages/Stock';
 
 function App() {
