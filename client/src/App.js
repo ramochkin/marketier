@@ -15,7 +15,9 @@ import UserPage from './pages/UserPage';
 import StockPage from './pages/StockPage';
 import CurrenciesPage from './pages/CurrenciesPage';
 import CryptoPage from './pages/CryptoPage';
-// import HomePage
+import Profile from './pages/Profile'
+
+
 
 const httpLink = createHttpLink({
     uri: '/graphql',
@@ -69,6 +71,10 @@ function App() {
               <Route
                 path='/crypto'
                 element={<CryptoPage />}
+              />
+              <Route
+                path='/profile'
+                element={<Profile />}
               />
               <Route
                 path='*'
