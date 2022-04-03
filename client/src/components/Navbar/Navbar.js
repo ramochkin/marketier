@@ -51,7 +51,7 @@ export default function Navbar() {
                             </>
                         )
                             : (<li className="leftlink" ><Link to='#' onClick={() => setShowModal(true)}>Login/Sign Up</Link></li>)}
-                        <SearchBar />
+                        {/* <SearchBar /> */}
                     </ul>
                 )}
 
