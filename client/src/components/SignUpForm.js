@@ -72,7 +72,7 @@ const SignupForm = () => {
           <Form.Control
             type='text'
             placeholder='Your Name'
-            name='username'
+            name='name'
             onChange={handleInputChange}
             value={userFormData.name}
             required
@@ -106,7 +106,7 @@ const SignupForm = () => {
           <Form.Control.Feedback type='invalid'>Password is required!</Form.Control.Feedback>
         </Form.Group>
         <Button
-          disabled={!(userFormData.username && userFormData.email && userFormData.password)}
+          disabled={!(userFormData.name && userFormData.email && userFormData.password)}
           type='submit'
           variant='success'>
           Submit

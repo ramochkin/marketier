@@ -32,7 +32,8 @@ export default function SearchBar() {
                 type="text"
                 placeholder="Search here"
                 onChange={handleChange}
-                value={searchInput} />
+                value={searchInput} 
+                name="searchInput"/>
         </div>
     );
 
