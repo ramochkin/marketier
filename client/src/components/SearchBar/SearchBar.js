@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { ReactSearchAutocomplete } from 'react-search-autocomplete'
+import './SearchBar.css';
 
 
 export default function SearchBar() {

@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 
 import CurrenciesCard from "../components/partials/CurrenciesCard";
-import BarChart from '../components/partials/BarChart';
+import CurBarChart from '../components/partials/CurBarChart';
 import Ticker from 'react-ticker'
 import "../css/GainerAndLoser.css"
 
@@ -43,14 +43,14 @@ function CurrenciesPage() {
 
         
             <header>
-                <h2>Currencies Data</h2>
+                <h2 className= "headerTitle">Currencies Data</h2>
             </header>
             <div className='flexRow'>
                 <div className='flexRow CurrenciesText'>
                     {allCurrenciess}
                 </div>
                 <div className='flexColumn'>
-                   <BarChart data={Currenciess}/>
+                   <CurBarChart data={Currenciess}/>
                 </div>
 
             </div>
