@@ -1,14 +1,26 @@
+*{
+    font-family: "Times New Roman", Times, serif;
+}
+
 .flexRow {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
 }
+
+.flexRowNews{
+    min-width: 100%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
 .flexRow a {
     margin-right: 15px;
 }
 .cardMargin {
-    margin-right: 25px;
-    padding: 20px;
+    margin: 5px;
+    padding: 5px;
 }
 .gainerColor {
     background-color: rgb(149, 255, 255);
@@ -27,11 +39,90 @@
 }
 .cryptoColor {
     background-color: rgba(56, 187, 4, 0.884);
-
+    color: white;
 }
+
+.StockColor{
+    background-color: lightseagreen;
+    color: white;
+}
+
+.currencyColor{
+    background-color: navy;
+    color: white;
+}
+
 .cryptoText {
     color: whitesmoke;
 }
 .cryptoText header {
     font-weight: bold;
+}
+
+
+
+.tickerBar {display: flex;
+    align-items: center;
+    padding: 5px;
+    border-radius: 10px;
+    margin: 10px;
+    border-style: solid 1px black;
+    }
+
+.headerTitle {
+    align-items: center;
+    text-align: center;
+}
+
+@media only screen
+and (min-width : 320px)
+and (max-width : 480px) {
+/* Styles */
+}
+ 
+/* Smartphones (landscape) ----------- */
+@media only screen
+and (min-width : 321px) {
+/* Styles */
+}
+ 
+/* Smartphones (portrait) ----------- */
+@media only screen
+and (max-width : 320px) {
+/* Styles */
+}
+ 
+/* iPads (portrait and landscape) ----------- */
+@media only screen
+and (min-width : 768px)
+and (max-width : 1024px) {
+/* Styles */
+}
+ 
+/* iPads (landscape) ----------- */
+@media only screen
+and (min-width : 768px)
+and (max-width : 1024px)
+and (orientation : landscape) {
+/* Styles */
+}
+ 
+/* iPads (portrait) ----------- */
+@media only screen
+and (min-width : 768px)
+and (max-width : 1024px)
+and (orientation : portrait) {
+/* Styles */
+}
+ 
+/* Desktops and laptops ----------- */
+@media only screen
+and (min-width : 1224px) {
+/* Styles */
+}
+ 
+/* Large screens ----------- */
+@media only screen
+and (min-width : 1824px) {
+/* Styles */
 }

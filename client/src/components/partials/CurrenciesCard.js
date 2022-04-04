@@ -2,7 +2,7 @@ import React from 'react';
 
 function CurrenciesCard(props) {
     return (
-        <div className='cardMargin cryptoColor' >
+        <div className='cardMargin currencyColor' >
             <header>{props.currency.name}</header>
             <ul>
                 {/* Item */}
