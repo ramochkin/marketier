@@ -3,12 +3,12 @@ import { Bar } from 'react-chartjs-2'
 ChartJS.register(...registerables);
 
 
-function BarChart({cryptos}) {
+function BarChart({data}) {
   var data = {
-    labels: cryptos?.map(x => x.name),
+    labels: data?.map(x => x.name),
     datasets: [{
-      label: `${cryptos?.length} cryptos Available`,
-      data: cryptos?.map(x => x.price),
+      label: `${data?.length} cryptos Available`,
+      data: data?.map(x => x.price),
       backgroundColor: [
         'rgba(255, 99, 132, 0.2)',
         'rgba(54, 162, 235, 0.2)',

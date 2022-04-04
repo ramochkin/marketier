@@ -37,7 +37,7 @@ function CryptoPage() {
                     {allCryptos}
                 </div>
                 <div className='flexColumn'>
-                    <BarChart cryptos={cryptos} />
+                    <BarChart data={cryptos} />
                 </div>
             </div>
 
