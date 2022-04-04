@@ -3,12 +3,12 @@ import { Bar } from 'react-chartjs-2'
 ChartJS.register(...registerables);
 
 
-function BarChart({data}) {
+function CurBarChart({data}) {
   var data = {
-    labels: data?.map(x => x.name),
+    labels: data?.map(x => x.ticker),
     datasets: [{
       label: `${data?.length} data Available`,
-      data: data?.map(x => x.price),
+      data: data?.map(x => x.high),
       backgroundColor: [
         'rgba(255, 99, 132, 0.2)',
         'rgba(54, 162, 235, 0.2)',
@@ -53,4 +53,4 @@ function BarChart({data}) {
   )
 }
 
-export default BarChart
+export default CurBarChart
