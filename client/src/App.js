@@ -16,6 +16,7 @@ import StockPage from './pages/StockPage';
 import CurrenciesPage from './pages/CurrenciesPage';
 import CryptoPage from './pages/CryptoPage';
 import Profile from './pages/Profile'
+import SymbolPage from './pages/SymbolPage'
 
 
 
