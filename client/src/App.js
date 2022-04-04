@@ -13,6 +13,7 @@ import HomePage from './pages/HomePage';
 import NewsPage from './pages/NewsPage';
 import UserPage from './pages/UserPage';
 import StockPage from './pages/StockPage';
+import SymbolPage from './pages/SymbolPage'
 import CurrenciesPage from './pages/CurrenciesPage';
 import CryptoPage from './pages/CryptoPage';
 import Profile from './pages/Profile'
@@ -41,7 +42,9 @@ const client = new ApolloClient({
     cache: new InMemoryCache(),
 });
 
+
 function App() {
+
     return (
       <ApolloProvider client={client}>
         <Router>
@@ -65,7 +68,7 @@ function App() {
                 element={<StockPage />}
               />
               <Route
-                path='/:symbol'
+                path='/symbol/:symbol'
                 element={<SymbolPage />}
               />
               <Route
