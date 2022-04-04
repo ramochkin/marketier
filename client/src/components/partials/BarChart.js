@@ -7,7 +7,7 @@ function BarChart({data}) {
   var data = {
     labels: data?.map(x => x.name),
     datasets: [{
-      label: `${data?.length} cryptos Available`,
+      label: `${data?.length}`,
       data: data?.map(x => x.price),
       backgroundColor: [
         'rgba(255, 99, 132, 0.2)',
