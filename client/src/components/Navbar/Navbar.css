@@ -67,3 +67,12 @@ nav {
     }
     /* TODO: BACKGROUND FOR DROPDOWN MENU */
 }
+.NavflexRow {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+}
+.NavflexRow img {
+    padding: 5px;
+}
