@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import CryptoCard from "../components/partials/CryptoCard";
 import BarChart from '../components/partials/BarChart';
+import Ticker from 'react-ticker'
 import "../css/GainerAndLoser.css"
 
 
@@ -13,7 +14,7 @@ function CryptoPage() {
             .then(response => response.json())
             .then(function (data) {
                 console.log(data)
-                setCryptos(data.splice(0, 10))
+                setCryptos(data.splice(0, 20))
             });
 
     }, []);
@@ -24,19 +25,26 @@ function CryptoPage() {
             return <CryptoCard key={crypto.title} crypto={crypto} />
 
         })
-    
+
 
     return (
 
         <div>
+            {cryptos && <Ticker>
+                {({ index }) => (
+                    <>
+                        <h1>{cryptos[index].name} : {cryptos[index].price}   |</h1>
+                    </>
+                )}
+            </Ticker>}
             <header>
                 <h2>Crypto Data</h2>
             </header>
             <div className='flexRow'>
-                <div className='flexRow cryptoText'>
+                <div className='flexRow CurrenciesText'>
                     {allCryptos}
                 </div>
-                <div className='flexColumn'>
+                <div>
                     <BarChart data={cryptos} />
                 </div>
             </div>
@@ -44,7 +52,6 @@ function CryptoPage() {
         </div>
     )
 }
-
 
 
 export default CryptoPage;
