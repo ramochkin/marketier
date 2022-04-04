@@ -15,7 +15,17 @@ nav {
     display: flex;
     justify-content: left;
     align-items: center;
+    position: relative
+}
+.rightNavbarLinks {
+    list-style-type: none;
+    height: 100%;
+    display: flex;
+    float:right;
+    justify-content: right;
+    align-items: center;
     position: relative;
+    margin-left: 15%;
 }
 
 .leftLink {
@@ -25,12 +35,14 @@ nav {
     cursor: pointer;
 }
 
-/* .rightLinks {
+.rightLink {
     margin-right: 20px;
     font-size: 20px;
     color: #000;
     cursor: pointer;
-} */
+    justify-content: right;
+    align-items: right;
+}
 
 .arrowbtn {
     display: none;
@@ -41,6 +53,7 @@ nav {
     color: #000;
     font-size: 18px;
 }
+
 
 @media screen and (max-width: 500px){
 

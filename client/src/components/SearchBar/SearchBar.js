@@ -1,8 +1,60 @@
 import React, { useEffect, useState } from 'react';
+import { ReactSearchAutocomplete } from 'react-search-autocomplete'
 import './SearchBar.css';
 
 
 export default function SearchBar() {
+    const items = [
+        {
+            id: 0,
+            name: 'AAPL'
+        },
+        {
+            id: 1,
+            name: 'AMZN'
+        },
+        {
+            id: 2,
+            name: 'TSLA'
+        },
+        {
+            id: 3,
+            name: 'MSFT'
+        },
+        {
+            id: 4,
+            name: 'AAL'
+        }
+    ]
+
+    const handleOnSearch = (string, results) => {
+        // onSearch will have as the first callback parameter
+        // the string searched and for the second the results.
+        console.log(string, results)
+      }
+    
+      const handleOnHover = (result) => {
+        // the item hovered
+        console.log(result)
+      }
+    
+      const handleOnSelect = (item) => {
+        // the item selected
+        console.log(item)
+      }
+    
+      const handleOnFocus = () => {
+        console.log('Focused')
+      }
+    
+      const formatResult = (item) => {
+        return (
+          <>
+           <span style={{ display: 'block', textAlign: 'left' }}> {item.name}</span>
+          </>
+        )
+      }
+
     const [searchInput, setSearchInput] = useState('');
     const [searchData, setSearchData] = useState('')
 
@@ -28,13 +80,21 @@ export default function SearchBar() {
 
 
     return (
-        <div className="container">
-            <input className = "pull-right"
-                type="text"
-                placeholder="Search here"
-                onChange={handleChange}
-                value={searchInput} 
-                name="searchInput"/>
+        <div className="App">
+            <header className="App-header">
+                <div style={{ width: 300 }}>
+                    <ReactSearchAutocomplete
+                        items={items}
+                        onSearch={handleOnSearch}
+                        onHover={handleOnHover}
+                        onSelect={handleOnSelect}
+                        onFocus={handleOnFocus}
+                        autoFocus
+                        formatResult={formatResult}
+                    />
+                    <button type="submit" onClick={()=>{}}> search </button>
+                </div>
+            </header>
         </div>
     );
 

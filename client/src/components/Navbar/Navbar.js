@@ -43,15 +43,17 @@ export default function Navbar() {
                         <li className="leftLink" ><Link to="/stocks">Stocks</Link></li>
                         <li className="leftLink" ><Link to="/currencies">Currencies</Link></li>
                         <li className="leftLink" ><Link to="/crypto">Cryptocurrencies</Link></li>
+                        <SearchBar />
+                        <div className="rightNavbarLinks">
                         {auth.loggedIn() ? (
                             <>
-                                <li className="leftLink" ><Link to="/profile">Profile</Link></li>
-                                <li className="leftlink" ><Link to='#' onClick={() => auth.logout()}>Log Out</Link></li>
+                                <li className="rightLink" ><Link to="/profile">Profile</Link></li>
+                                <li className="rightLink" id="logOut" ><Link to='#' onClick={() => auth.logout()}>Log Out</Link></li>
 
                             </>
                         )
-                            : (<li className="leftlink" ><Link to='#' onClick={() => setShowModal(true)}>Login/Sign Up</Link></li>)}
-                        <SearchBar />
+                            : (<li className="rightlink" ><Link to='#' onClick={() => setShowModal(true)}>Login/Sign Up</Link></li>)}
+                        </div>
                     </ul>
                 )}
 
