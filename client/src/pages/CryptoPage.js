@@ -14,7 +14,7 @@ function CryptoPage() {
             .then(response => response.json())
             .then(function (data) {
                 console.log(data)
-                setCryptos(data.splice(0, 20))
+                setCryptos(data.splice(0, 10))
             });
 
     }, []);
@@ -27,21 +27,27 @@ function CryptoPage() {
         })
 
 
+        const tickerData =
+        cryptos &&
+        cryptos.map((crypto) => {
+            return `${crypto.name} : $${crypto.price.toFixed(2)}`
+        })
+
+
     return (
 
         <div>
             {cryptos && <Ticker>
-                {({ index }) => (
-                    <>
-                        <h1>{cryptos[index].name} : {cryptos[index].price}   |</h1>
-                    </>
-                )}
+            {({}) => (
+                tickerData.join("   |   ")
+            )}
             </Ticker>}
+
             <header>
                 <h2>Crypto Data</h2>
             </header>
             <div className='flexRow'>
-                <div className='flexRow CurrenciesText'>
+                <div className='flexRow CryptoText'>
                     {allCryptos}
                 </div>
                 <div>

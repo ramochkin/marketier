@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 
 import CurrenciesCard from "../components/partials/CurrenciesCard";
 import BarChart from '../components/partials/BarChart';
+import Ticker from 'react-ticker'
 import "../css/GainerAndLoser.css"
 
 
@@ -24,10 +25,23 @@ function CurrenciesPage() {
             return <CurrenciesCard key={currency.title} currency={currency} />
 
         })
+        const tickerData =
+        Currenciess &&
+        Currenciess.map((currencies) => {
+            return `${currencies.ticker} : ${currencies.changes.toFixed(4)}% `
+        })
+
 
     return (
 
         <div>
+            {Currenciess && <Ticker>
+            {({}) => (
+                tickerData.join("   |   ")
+            )}
+            </Ticker>}
+
+        
             <header>
                 <h2>Currencies Data</h2>
             </header>

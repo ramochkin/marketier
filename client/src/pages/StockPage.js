@@ -1,33 +1,45 @@
 import React, { useState, useEffect } from 'react';
 import BarChart from '../components/partials/BarChart';
 import StockCard from "../components/partials/StockCard";
-
+import Ticker from 'react-ticker'
 import "../css/GainerAndLoser.css"
 
 
 function StockPage() {
-    const [Stocks, setStocks] = useState(null);
+    const [stocks, setStocks] = useState(null);
 
     useEffect(() => {
         fetch('https://financialmodelingprep.com/api/v3/quotes/index?apikey=430e3d658d7945141a85b4b5f2a6b7da')
             .then(response => response.json())
             .then(function (data) {
                 console.log(data)
-                setStocks(data.splice(0, 10))
-    });
-    
-}, []);
+                setStocks(data.splice(0, 20))
+            });
 
-const allStocks =
-Stocks &&
-Stocks.map((stock) => {
-    return <StockCard key={stock.symbol} stock={stock} />
+    }, []);
+
+    const allStocks =
+        stocks &&
+        stocks.map((stock) => {
+            return <StockCard key={stock.symbol} stock={stock} />
 
         })
+    const tickerData =
+        stocks &&
+        stocks.map((stock) => {
+            return `${stock.symbol} : ${stock.price.toFixed(2)}`
+        })
+
 
     return (
 
         <div>
+            {stocks && <Ticker>
+            {({}) => (
+                tickerData.join("   |   ")
+            )}
+            </Ticker>}
+
             <header>
                 <h2>Stock Data</h2>
             </header>
@@ -36,7 +48,7 @@ Stocks.map((stock) => {
                     {allStocks}
                 </div>
                 <div className='flexColumn'>
-                    <BarChart data={Stocks} />
+                    <BarChart data={stocks} />
                 </div>
 
             </div>
