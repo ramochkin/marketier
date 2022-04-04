@@ -41,7 +41,7 @@ function StockPage() {
             </Ticker>}
 
             <header>
-                <h2>Stock Data</h2>
+                <h2 className= "headerTitle">Stock Data</h2>
             </header>
             <div className='flexRow'>
                 <div className='flexRow StockText'>

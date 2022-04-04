@@ -43,7 +43,7 @@ function CurrenciesPage() {
 
         
             <header>
-                <h2>Currencies Data</h2>
+                <h2 className= "headerTitle">Currencies Data</h2>
             </header>
             <div className='flexRow'>
                 <div className='flexRow CurrenciesText'>

@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import './SearchBar.css';
 
 
 export default function SearchBar() {
@@ -27,8 +28,8 @@ export default function SearchBar() {
 
 
     return (
-        <div>
-            <input
+        <div className="container">
+            <input className = "pull-right"
                 type="text"
                 placeholder="Search here"
                 onChange={handleChange}

@@ -28,10 +28,10 @@ function NewsPage() {
 
         <div>
             <header>
-                <h2>Latest News</h2>
+                <h2 className= "headerTitle">Latest News</h2>
             </header>
   
-            <div className='flexRow'>
+            <div className='flexRow card-body'>
                 {allNews}
             </div>
         </div>
