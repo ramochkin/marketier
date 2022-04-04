@@ -25,3 +25,13 @@
     border-radius: 25px;
 
 }
+.cryptoColor {
+    background-color: rgba(56, 187, 4, 0.884);
+
+}
+.cryptoText {
+    color: whitesmoke;
+}
+.cryptoText header {
+    font-weight: bold;
+}
