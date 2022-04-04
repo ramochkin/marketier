@@ -60,10 +60,10 @@ function App() {
                 path='/user'
                 element={<UserPage />}
               />
-              <Route
+              {/* <Route
                 path='/stocks'
                 element={<StockPage />}
-              />
+              /> */}
               <Route
                 path='/currencies'
                 element={<CurrenciesPage />}

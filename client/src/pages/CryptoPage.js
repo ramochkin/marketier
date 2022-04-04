@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import CryptoCard from "../components/partials/Cryptocard";
+import CryptoCard from "../components/partials/CryptoCard";
 
 function CryptoPage () {
     // const [crypto, setCrypto] = useState(null);
