@@ -6,7 +6,7 @@ import LoginForm from '../LoginForm'
 import SignUpForm from '../SignUpForm'
 import auth from '../../utils/auth'
 import SearchBar from '../SearchBar/SearchBar'
-
+import logo from '../../assets/image/marketier.png'
 
 export default function Navbar() {
     const [toggleMenu, setToggleMenu] = useState(false);
@@ -74,7 +74,7 @@ export default function Navbar() {
 
 
                 <button onClick={toggleNav} className="arrowbtn">▼</button>
-            </nav>
+            </nav >
             <Modal
                 size='lg'
                 show={showModal}
