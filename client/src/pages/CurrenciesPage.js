@@ -35,6 +35,9 @@ function CurrenciesPage() {
                 <div className='flexRow CurrenciesText'>
                     {allCurrenciess}
                 </div>
+                <div className='flexColumn'>
+                   {/* <BarChart data={stock}/> */}
+                </div>
 
             </div>
 
