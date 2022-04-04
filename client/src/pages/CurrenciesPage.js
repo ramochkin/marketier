@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-
+import Ticker from 'react-ticker'
 import CurrenciesCard from "../components/partials/CurrenciesCard";
 import BarChart from '../components/partials/BarChart';
 import "../css/GainerAndLoser.css"
@@ -28,6 +28,13 @@ function CurrenciesPage() {
     return (
 
         <div>
+           {Currenciess && <Ticker>
+                {({ index }) => (
+                    <>
+                        <h1>{Currenciess[index].ticker} : {Currenciess[index].changes.toFixed(4)}%, Open: {Currenciess[index].open}, High: {Currenciess[index].high}, Low: {Currenciess[index].low}  </h1>
+                    </>
+                )}
+            </Ticker>}
             <header>
                 <h2>Currencies Data</h2>
             </header>
