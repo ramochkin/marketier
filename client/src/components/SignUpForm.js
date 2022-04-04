@@ -40,6 +40,7 @@ const SignupForm = () => {
     }
 
     try {
+      console.log( error )
       const { data } = await addUser({
         variables: { ...userFormData }
       });
@@ -52,7 +53,7 @@ const SignupForm = () => {
     }
 
     setUserFormData({
-      username: '',
+      name: '',
       email: '',
       password: '',
     });

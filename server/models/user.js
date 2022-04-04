@@ -18,7 +18,7 @@ const userSchema = new Schema({
         lowercase: true,
         required: true,
         match: [/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/, 'Please fill a valid email address'],
-        unique: true
+        // unique: true
     },
     watchlist: [watchlistSchema],
 

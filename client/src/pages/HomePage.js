@@ -15,19 +15,19 @@ function HomePage() {
         fetch('https://financialmodelingprep.com/api/v3/stock_market/gainers?apikey=430e3d658d7945141a85b4b5f2a6b7da')
             .then(response => response.json())
             .then(function (data) {
-                console.log(data)
+                // console.log(data)
                 setGainers(data.splice(0, 5))
             });
         fetch('https://financialmodelingprep.com/api/v3/stock_market/losers?apikey=430e3d658d7945141a85b4b5f2a6b7da')
             .then(response => response.json())
             .then(function (data) {
-                console.log(data)
+                // console.log(data)
                 setLosers(data.splice(0, 5))
             });
         fetch('https://financialmodelingprep.com/api/v3/stock_news?tickers=AAPL,FB,GOOG,AMZN&page=0&apikey=430e3d658d7945141a85b4b5f2a6b7da')
             .then(response => response.json())
             .then(function (data) {
-                console.log(data)
+                // console.log(data)
                 setNews(data.splice(0, 5))
             });
     }, []);

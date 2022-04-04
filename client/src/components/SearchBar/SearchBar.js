@@ -9,7 +9,7 @@ export default function SearchBar() {
         fetch('https://financialmodelingprep.com/api/v3/search?query=AA&limit=10&exchange=NASDAQ&apikey=430e3d658d7945141a85b4b5f2a6b7da')
             .then(response => response.json())
             .then(function (data) {
-                console.log(data)
+                // console.log(data)
                 setSearchData(data)
             })
     }, []);
