@@ -4,7 +4,7 @@ const portfolioSchema = new Schema({
     symbol: {
         type: String,
         required: true,
-        unique: true
+        // unique: true
     },
     quantity: {
         type: Number,
