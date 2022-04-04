@@ -55,7 +55,7 @@ function HomePage() {
 
         <div>
             <header>
-                <h2>Top Gainers / Losers</h2>
+                <h2 className= "headerTitle">Top Gainers / Losers</h2>
             </header>
             <div className='flexRow'>
                 <div className='flexRow'>

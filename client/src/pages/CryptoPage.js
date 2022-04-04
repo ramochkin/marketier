@@ -14,7 +14,7 @@ function CryptoPage() {
             .then(response => response.json())
             .then(function (data) {
                 console.log(data)
-                setCryptos(data.splice(0, 10))
+                setCryptos(data.splice(0, 12))
             });
 
     }, []);
@@ -37,16 +37,16 @@ function CryptoPage() {
     return (
 
         <div>
-            {cryptos && <Ticker>
+            {cryptos && <Ticker className= "tickerBar">
             {({}) => (
                 tickerData.join("   |   ")
             )}
             </Ticker>}
 
             <header>
-                <h2>Crypto Data</h2>
+                <h2 className="headerTitle">Crypto Data</h2>
             </header>
-            <div className='flexRow'>
+            <div className='flexRow card-group'>
                 <div className='flexRow CryptoText'>
                     {allCryptos}
                 </div>
