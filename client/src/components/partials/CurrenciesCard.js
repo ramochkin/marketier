@@ -3,7 +3,7 @@ import React from 'react';
 function CurrenciesCard(props) {
     return (
         <div className='cardMargin cryptoColor' >
-            <header>{props.stock.name}</header>
+            <header>{props.currency.name}</header>
             <ul>
                 {/* Item */}
                 <li>
@@ -11,23 +11,23 @@ function CurrenciesCard(props) {
                         <div>
                             <div className='flexRow'>
                                 <a>Ticker :</a>
-                                <span> {props.stock.ticker}</span>
+                                <span> {props.currency.ticker}</span>
                             </div>
                             <div className='flexRow'>
                                 <a>Changes</a>
-                                <span>  {props.stock.changes.toFixed(4)} %</span>
+                                <span>  {props.currency.changes.toFixed(4)} %</span>
                             </div>
                             <div className='flexRow'>
                                 <a>Open :</a>
-                                <span> $ {props.stock.open}</span>
+                                <span> $ {props.currency.open}</span>
                             </div>
                             <div className='flexRow'>
                                 <a>High :</a>
-                                <span> $ {props.stock.high}</span>
+                                <span> $ {props.currency.high}</span>
                             </div>
                             <div className='flexRow'>
                                 <a>Low :</a>
-                                <span> $ {props.stock.low}</span>
+                                <span> $ {props.currency.low}</span>
                             </div>
                         </div>
                     </div>

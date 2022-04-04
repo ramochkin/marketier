@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 
 import CurrenciesCard from "../components/partials/CurrenciesCard";
-
+import BarChart from '../components/partials/BarChart';
 import "../css/GainerAndLoser.css"
 
 
@@ -20,8 +20,8 @@ function CurrenciesPage() {
 
     const allCurrenciess =
         Currenciess &&
-        Currenciess.map((stock) => {
-            return <CurrenciesCard key={stock.title} stock={stock} />
+        Currenciess.map((currency) => {
+            return <CurrenciesCard key={currency.title} currency={currency} />
 
         })
 
@@ -34,6 +34,9 @@ function CurrenciesPage() {
             <div className='flexRow'>
                 <div className='flexRow CurrenciesText'>
                     {allCurrenciess}
+                </div>
+                <div className='flexColumn'>
+                   <BarChart data={Currenciess}/>
                 </div>
 
             </div>

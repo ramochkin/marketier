@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-
+import BarChart from '../components/partials/BarChart';
 import StockCard from "../components/partials/StockCard";
 
 import "../css/GainerAndLoser.css"
@@ -34,6 +34,9 @@ Stocks.map((stock) => {
             <div className='flexRow'>
                 <div className='flexRow StockText'>
                     {allStocks}
+                </div>
+                <div className='flexColumn'>
+                    <BarChart data={Stocks} />
                 </div>
 
             </div>
