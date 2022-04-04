@@ -1,3 +1,7 @@
+*{
+    font-family: "Times New Roman", Times, serif;
+}
+
 .flexRow {
     display: flex;
     flex-direction: row;
@@ -7,8 +11,8 @@
     margin-right: 15px;
 }
 .cardMargin {
-    margin-right: 25px;
-    padding: 20px;
+    margin: 5px;
+    padding: 5px;
 }
 .gainerColor {
     background-color: rgb(149, 255, 255);
@@ -27,11 +31,21 @@
 }
 .cryptoColor {
     background-color: rgba(56, 187, 4, 0.884);
-
+    color: white;
 }
 .cryptoText {
     color: whitesmoke;
 }
 .cryptoText header {
     font-weight: bold;
+}
+
+.tickerBar {display: flex;
+    align-items: center;
+    padding: 0.7em 0;
+    border-radius: 10px;
+    }
+
+.headerTitle {
+    align-items: center;
 }
