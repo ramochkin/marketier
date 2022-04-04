@@ -5,10 +5,10 @@ ChartJS.register(...registerables);
 
 const LineChart = (data) => {
     var data = {
-      labels: data.map(x => x.name),
+      labels: data.map(x => x.date),
       datasets: [{
         label: `${data?.length} Data Available`,
-        data: data?.map(x => x.price),
+        data: data?.map(x => x.close),
         backgroundColor: [
           'rgba(255, 99, 132, 0.2)',
           'rgba(54, 162, 235, 0.2)',
