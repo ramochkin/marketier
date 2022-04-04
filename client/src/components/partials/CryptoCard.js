@@ -3,7 +3,7 @@ import React from 'react';
 function CryptoCard(props) {
     return (
         <div className='cardMargin cryptoColor' >
-            <header>{props.stock.name}</header>
+            <header>{props.crypto.name}</header>
             <ul>
                 {/* Item */}
                 <li>
@@ -11,23 +11,23 @@ function CryptoCard(props) {
                         <div>
                             <div className='flexRow'>
                                 <a>Price :</a>
-                                <span> ${props.stock.price}</span>
+                                <span> ${props.crypto.price}</span>
                             </div>
                             <div className='flexRow'>
                                 <a>Day High :</a>
-                                <span> $ {props.stock.dayHigh}</span>
+                                <span> $ {props.crypto.dayHigh}</span>
                             </div>
                             <div className='flexRow'>
                                 <a>Day Low :</a>
-                                <span> $ {props.stock.dayLow}</span>
+                                <span> $ {props.crypto.dayLow}</span>
                             </div>
                             <div className='flexRow'>
                                 <a>Year High :</a>
-                                <span> $ {props.stock.yearHigh}</span>
+                                <span> $ {props.crypto.yearHigh}</span>
                             </div>
                             <div className='flexRow'>
                                 <a>Year Low :</a>
-                                <span> $ {props.stock.yearLow}</span>
+                                <span> $ {props.crypto.yearLow}</span>
                             </div>
                         </div>
                     </div>
