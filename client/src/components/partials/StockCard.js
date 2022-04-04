@@ -10,12 +10,8 @@ function StockCard(props) {
                     <div>
                         <div>
                             <div className='flexRow'>
-                                <a>Price</a>
+                                <a>Price : </a>
                                 <span> ${props.stock.price}</span>
-                            </div>
-                            <div className='flexRow'>
-                                <a>Change</a>
-                                <span> ${props.stock.change}</span>
                             </div>
                             <div className='flexRow'>
                                 <a>Changes %</a>
