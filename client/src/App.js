@@ -65,6 +65,10 @@ function App() {
                 element={<StockPage />}
               />
               <Route
+                path='/:symbol'
+                element={<SymbolPage />}
+              />
+              <Route
                 path='/currencies'
                 element={<CurrenciesPage />}
               />
