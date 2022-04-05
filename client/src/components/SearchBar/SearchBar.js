@@ -1,101 +1,85 @@
-import React, { useEffect, useState } from 'react';
-import { ReactSearchAutocomplete } from 'react-search-autocomplete'
-import './SearchBar.css';
+import React, { useState, useEffect } from "react";
+import "./SearchBar.css";
+import SearchIcon from "@material-ui/icons/Search";
+import CloseIcon from "@material-ui/icons/Close";
 
+function SearchBar() {
 
-export default function SearchBar() {
-    const items = [
+    const data = [
         {
-            id: 0,
-            name: 'AAPL'
+            symbol: "AAPL"
         },
         {
-            id: 1,
-            name: 'AMZN'
+            symbol: "AMZN"
         },
         {
-            id: 2,
-            name: 'TSLA'
+            symbol: "AAL"
         },
         {
-            id: 3,
-            name: 'MSFT'
+            symbol: "ABC"
         },
-        {
-            id: 4,
-            name: 'AAL'
-        }
+
     ]
 
-    const handleOnSearch = (string, results) => {
-        // onSearch will have as the first callback parameter
-        // the string searched and for the second the results.
-        console.log(string, results)
-      }
-    
-      const handleOnHover = (result) => {
-        // the item hovered
-        console.log(result)
-      }
-    
-      const handleOnSelect = (item) => {
-        // the item selected
-        console.log(item)
-      }
-    
-      const handleOnFocus = () => {
-        console.log('Focused')
-      }
-    
-      const formatResult = (item) => {
-        return (
-          <>
-           <span style={{ display: 'block', textAlign: 'left' }}> {item.name}</span>
-          </>
-        )
-      }
+    const [filteredData, setFilteredData] = useState([]);
+    const [wordEntered, setWordEntered] = useState("");
+    const [ticker, setTicker] = useState("");
 
-    const [searchInput, setSearchInput] = useState('');
-    const [searchData, setSearchData] = useState('')
-
-    useEffect(() => {
-        fetch('https://financialmodelingprep.com/api/v3/search?query=AA&limit=10&exchange=NASDAQ&apikey=430e3d658d7945141a85b4b5f2a6b7da')
-            .then(response => response.json())
-            .then(function (data) {
-                // console.log(data)
-                setSearchData(data)
-            })
-    }, []);
-
-    const handleChange = (e) => {
-        e.preventDefault();
-        setSearchInput(e.target.value);
-    };
-    if (searchInput.length > 0) {
-        searchData.filter((input) => {
-            return input.symbol.match(searchInput);
+    const handleFilter = (event) => {
+        const searchWord = event.target.value;
+        setWordEntered(searchWord);
+        const newFilter = data.filter((value) => {
+            return value.symbol.toUpperCase().includes(searchWord.toUpperCase());
         });
+
+        if (searchWord === "") {
+            setFilteredData([]);
+        } else {
+            setFilteredData(newFilter);
+        }
+    };
+
+    const clearInput = () => {
+        setFilteredData([]);
+        setWordEntered("");
+    };
+
+    function checkVal(data){
+        window.location.replace(`/symbol/${data}`)
     }
 
-
-
     return (
-        <div className="App">
-            <header className="App-header">
-                <div style={{ width: 300 }}>
-                    <ReactSearchAutocomplete
-                        items={items}
-                        onSearch={handleOnSearch}
-                        onHover={handleOnHover}
-                        onSelect={handleOnSelect}
-                        onFocus={handleOnFocus}
-                        autoFocus
-                        formatResult={formatResult}
-                    />
-                    <button type="submit" onClick={()=>{}}> search </button>
+        <div className="search">
+            <div className="searchInputs">
+                <input
+                    type="text"
+                    placeholder="Search"
+                    value={wordEntered}
+                    name="wordEntered"
+                    onChange={handleFilter}
+                />
+                <div className="searchIcon">
+                    {filteredData.length === 0 ? (
+                        <SearchIcon />
+                    ) : (
+                        <CloseIcon id="clearBtn" onClick={clearInput} />
+                    )}
                 </div>
-            </header>
+            </div>
+            {filteredData.length != 0 && (
+                <div className="dataResult">
+                    {filteredData.slice(0, 15).map((value, key) => {
+                        return (
+                            <p value={value.symbol} onClick={()=> {
+                                checkVal(value.symbol)
+                               
+                            }}>{value.symbol}</p>
+                        );
+                    })}
+                </div>
+            )}
         </div>
     );
+}
 
-};
+export default SearchBar;

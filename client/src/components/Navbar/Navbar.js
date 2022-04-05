@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import { Link } from 'react-router-dom'
 import './Navbar.css'
-import { Modal, Tab, Nav } from 'react-bootstrap'
+import { Modal, Tab, Nav, Container, Row, Col } from 'react-bootstrap'
 import LoginForm from '../LoginForm'
 import SignUpForm from '../SignUpForm'
 import auth from '../../utils/auth'
@@ -36,29 +36,41 @@ export default function Navbar() {
     return (
         <>
             <nav>
-                {(toggleMenu || screenWidth > 500) && (
-                    <div className='NavflexRow'>
-                        <img src={logo} alt="Logo" width="75" height="75" href="/" />
-                        <ul className="navbarLinks">
-                            <li className="leftLink" ><Link to="/">Home</Link></li>
-                            <li className="leftLink" ><Link to="/news">News</Link></li>
-                            <li className="leftLink" ><Link to="/stocks">Stocks</Link></li>
-                            <li className="leftLink" ><Link to="/currencies">Currencies</Link></li>
-                            <li className="leftLink" ><Link to="/crypto">Cryptocurrencies</Link></li>
-                            <SearchBar />
-                            <div className="rightNavbarLinks">
-                                {auth.loggedIn() ? (
-                                    <>
-                                        <li className="rightLink" ><Link to="/profile">Profile</Link></li>
-                                        <li className="rightLink" id="logOut" ><Link to='#' onClick={() => auth.logout()}>Log Out</Link></li>
+                {/* {(toggleMenu || screenWidth > 500) && ( */}
+                    <Container>
+                        <Row>
+                            <Col xs={6}>
+                                <ul className="navbarLinks">
+                                    <li className="leftLink" ><Link to="/">Home</Link></li>
+                                    <li className="leftLink" ><Link to="/news">News</Link></li>
+                                    <li className="leftLink" ><Link to="/stocks">Stocks</Link></li>
+                                    <li className="leftLink" ><Link to="/currencies">Currencies</Link></li>
+                                    <li className="leftLink" ><Link to="/crypto">Cryptocurrencies</Link></li>
 
-                                    </>
-                                )
-                                    : (<li className="rightlink" ><Link to='#' onClick={() => setShowModal(true)}>Login/Sign Up</Link></li>)}
-                            </div>
-                        </ul>
-                    </div>
-                )}
+                                </ul>
+                            </Col>
+                            <Col>
+                                <SearchBar />
+                            </Col>
+                            <Col>
+
+                                <ul className="rightNavbarLinks">
+                                    {auth.loggedIn() ? (
+                                        <>
+                                            <li className="rightLink" ><Link to="/profile">Profile</Link></li>
+                                            <li className="rightLink" id="logOut" ><Link to='#' onClick={() => auth.logout()}>Log Out</Link></li>
+
+                                        </>
+                                    )
+                                        : (<li className="rightlink" ><Link to='#' onClick={() => setShowModal(true)}>Login/Sign Up</Link></li>)}
+                                </ul>
+
+                            </Col>
+
+                        </Row>
+                    </Container>
+
+                {/* )} */}
 
 
                 <button onClick={toggleNav} className="arrowbtn">▼</button>

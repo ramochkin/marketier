@@ -1,42 +1,30 @@
 import React, { useState, useEffect } from 'react';
-
+import { useParams } from "react-router-dom"
 import SymbolCard from "../components/partials/SymbolCard";
-
 import LineChart from "../components/partials/LineChart";
 import "../css/GainerAndLoser.css"
 
-function SymbolPage() {
-    const [symbols, setSymbols] = useState(null);
-    const [lineCharts, setLineCharts] = useState(null);
+export default function SymbolPage() {
+    const { symbol } = useParams();
 
+    const [symbolDetails, setSymbolDetails] = useState(null)
     useEffect(() => {
-        fetch('https://financialmodelingprep.com/api/v3/profile/AAPL?apikey=430e3d658d7945141a85b4b5f2a6b7da')
+        fetch(`https://financialmodelingprep.com/api/v3/profile/${symbol}?apikey=430e3d658d7945141a85b4b5f2a6b7da`)
             .then(response => response.json())
             .then(function (data) {
                 console.log(data)
-
+                setSymbolDetails(data)
+                console.log(symbolDetails)
             });
-        fetch('https://financialmodelingprep.com/api/v3/historical-chart/30min/AAPL?apikey=430e3d658d7945141a85b4b5f2a6b7da')
+        fetch(`https://financialmodelingprep.com/api/v3/historical-chart/30min/${symbol}?apikey=430e3d658d7945141a85b4b5f2a6b7da`)
             .then(response => response.json())
             .then(function (data) {
                 // console.log(data)
 
             });
+    }, [])
 
-    }, []);
-
-    const allSymbols =
-        symbols &&
-        symbols.map((symbols) => {
-            return <SymbolCard key={symbols.symbol} symbols={symbols} />
-
-        })
-    const allLineCharts =
-        lineCharts &&
-        lineCharts.map((chartsData) => {
-            return <LineChart key={chartsData.close} chartsData={chartsData} />
-
-        })
+    //TODO: Define symbols line 40 and allSymbols line 37
 
     return (
 
@@ -46,7 +34,7 @@ function SymbolPage() {
             </header>
             <div className='flexRow'>
                 <div className='flexRow StockText'>
-                    {allSymbols}
+                    <SymbolCard/>
                 </div>
                 <div className='flexColumn'>
                     <LineChart data={symbols} />
@@ -57,4 +45,3 @@ function SymbolPage() {
         </div>
     )
 }
-export default SymbolPage;
