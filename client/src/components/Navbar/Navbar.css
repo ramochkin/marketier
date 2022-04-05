@@ -14,7 +14,6 @@ nav {
     list-style-type: none;
     height: 100%;
     display: flex;
-    float:left;
     justify-content: left;
     align-items:center;
     position: relative
@@ -23,9 +22,7 @@ nav {
     list-style-type: none;
     height: 100%;
     display: flex;
-    float:right;
     justify-content: right;
-    align-items: center;
     position: relative;
     margin-left: 15%;
 }
@@ -56,41 +53,13 @@ nav {
     font-size: 18px;
 }
 
-
-@media screen and (max-width: 500px){
-
-    nav {
-        /* position: fixed; */
-        top: 0%;
-        width: 100%;
-        display: block;
-    }
-    .navbarLinks {
-        flex-direction: column;
-        height: auto;
-    }
-    .leftLink:nth-child(1){
-        border-top: 1px solid rgba(255, 255, 255, 0.555);
-        margin-top: 50px;
-    }
-    .leftLink {
-        width: 100%;
-        border-top: 1px solid rgba(255, 255, 255, 0.555);
-        text-align: center;
-        margin-right: 0px;
-        padding: 20px 0;
-    }
-    .arrowbtn {
-        display: block;
-    }
-    /* TODO: BACKGROUND FOR DROPDOWN MENU */
-}
 .NavflexRow {
     display: flex;
     flex-direction: row;
-    flex-wrap: wrap;
     align-items: center;
 }
 .NavflexRow img {
-    padding: 5px;
+    padding: 0px;
+    height: 40px;
+
 }
