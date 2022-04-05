@@ -24,10 +24,12 @@ This should start the development servers for the Apollo servers and start the R
 [Marketier]()
 
 # Preview
-![Demo]()
+![Home Page](https://github.com/ramochkin/marketier/blob/main/assets/home.png)
+![Stock Page](https://github.com/ramochkin/marketier/blob/main/assets/Stock.png)
+![Login Page](https://github.com/ramochkin/marketier/blob/main/assets/Log.png)
 
 # Wireframe
-![Render]()
+![Preview](https://github.com/ramochkin/marketier/blob/main/assets/Wireframe.pdf)
 
 # Licence
 Copyright (c) [2022] [Yujen Chen, Lloyd Ting, and Ramil Rakhamimov]
@@ -39,8 +41,11 @@ The above copyright notice and this permission notice shall be included in all c
 THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
 # Contributors
+
 [Yujen Chen](https://github.com/yujengogo)
+
 [Lloyd Ting](https://github.com/llting592)
+
 [Ramil Rakhamimov](https://github.com/ramochkin)
 
 We would also like to thank our instructor Roger, as well as our tutors and wonderful TAs, Andy and Rae, for their immense and invaluable help during this project. 
