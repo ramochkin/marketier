@@ -3,12 +3,13 @@ import { Line } from 'react-chartjs-2'
 ChartJS.register(...registerables);
 
 
-const LineChart = (data) => {
+const LineChart = (props) => {
+    console.log("this is a line chart", props);
     var data = {
-      labels: data.map(x => x.date),
+      labels: props.data.map(x => x.date),
       datasets: [{
-        label: `${data?.length} Data Available`,
-        data: data?.map(x => x.close),
+        label: `${props.data?.length} Data Available`,
+        data: props.data?.map(x => x.close),
         backgroundColor: [
           'rgba(255, 99, 132, 0.2)',
           'rgba(54, 162, 235, 0.2)',
@@ -28,9 +29,12 @@ const LineChart = (data) => {
         borderWidth: 1
       }]
     };
-  
+
+    console.log("this is data", data);
+
     var options = {
       maintainAspectRatio: false,
+      responsive:false,
       scales: {
       },
       legend: {
@@ -42,9 +46,10 @@ const LineChart = (data) => {
   
     return (
       <div>
+          <p>Price Action</p>
         <Line
           data={data}
-          height={600}
+          height={400}
           width={800}
           options={options}
   

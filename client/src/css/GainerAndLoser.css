@@ -59,7 +59,19 @@
     font-weight: bold;
 }
 
+.flexBox{
+    display: flex;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+}
 
+.flexColumn{
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+}
 
 .tickerBar {display: flex;
     align-items: center;
