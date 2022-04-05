@@ -10,11 +10,13 @@ nav {
 }
 
 .navbarLinks {
+    
     list-style-type: none;
     height: 100%;
     display: flex;
+    float:left;
     justify-content: left;
-    align-items: center;
+    align-items:center;
     position: relative
 }
 .rightNavbarLinks {

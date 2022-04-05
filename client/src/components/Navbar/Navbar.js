@@ -49,7 +49,7 @@ export default function Navbar() {
 
                                 </ul>
                             </Col>
-                            <Col>
+                            <Col xs={3}>
                                 <SearchBar />
                             </Col>
                             <Col>
