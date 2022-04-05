@@ -1,5 +1,5 @@
 .search {
-  display: inline
+  display: inline;
 }
 
 .searchInputs {
@@ -40,13 +40,15 @@ input:focus {
 }
 
 .dataResult {
-  margin-top: 5px;
-  width: 300px;
+  margin-top: 10px;
+  width: 400px;
   height: 200px;
   background-color: white;
   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
   overflow: hidden;
   overflow-y: auto;
+  position: absolute;
+  z-index: 2;
 }
 
 .dataResult::-webkit-scrollbar {

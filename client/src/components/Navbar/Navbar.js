@@ -6,7 +6,7 @@ import LoginForm from '../LoginForm'
 import SignUpForm from '../SignUpForm'
 import auth from '../../utils/auth'
 import SearchBar from '../SearchBar/SearchBar'
-import logo from '../../assets/image/marketier.png'
+import Logo from '../../assets/image/marketier.png'
 
 export default function Navbar() {
     const [toggleMenu, setToggleMenu] = useState(false);
@@ -36,41 +36,42 @@ export default function Navbar() {
     return (
         <>
             <nav>
-                {/* {(toggleMenu || screenWidth > 500) && ( */}
-                    <Container>
-                        <Row>
-                            <Col xs={6}>
-                                <ul className="navbarLinks">
-                                    <li className="leftLink" ><Link to="/">Home</Link></li>
-                                    <li className="leftLink" ><Link to="/news">News</Link></li>
-                                    <li className="leftLink" ><Link to="/stocks">Stocks</Link></li>
-                                    <li className="leftLink" ><Link to="/currencies">Currencies</Link></li>
-                                    <li className="leftLink" ><Link to="/crypto">Cryptocurrencies</Link></li>
 
-                                </ul>
-                            </Col>
-                            <Col xs={3}>
-                                <SearchBar />
-                            </Col>
-                            <Col>
+                {/* <Container> */}
+                <Row className='d-flex justify-content-between'>
+                    <Col className='NavflexRow'>
+                        {/* <img src={Logo}></img> */}
+                        <ul className="navbarLinks">
+                            <li className="leftLink" ><Link to="/">Home</Link></li>
+                            <li className="leftLink" ><Link to="/news">News</Link></li>
+                            <li className="leftLink" ><Link to="/stocks">Stocks</Link></li>
+                            <li className="leftLink" ><Link to="/currencies">Currencies</Link></li>
+                            <li className="leftLink" ><Link to="/crypto">Cryptocurrencies</Link></li>
 
-                                <ul className="rightNavbarLinks">
-                                    {auth.loggedIn() ? (
-                                        <>
-                                            <li className="rightLink" ><Link to="/profile">Profile</Link></li>
-                                            <li className="rightLink" id="logOut" ><Link to='#' onClick={() => auth.logout()}>Log Out</Link></li>
+                        </ul>
+                    </Col>
+                    <Col >
+                        <SearchBar />
+                    </Col>
+                    <Col>
 
-                                        </>
-                                    )
-                                        : (<li className="rightlink" ><Link to='#' onClick={() => setShowModal(true)}>Login/Sign Up</Link></li>)}
-                                </ul>
+                        <ul className="rightNavbarLinks">
+                            {auth.loggedIn() ? (
+                                <>
+                                    <li className="rightLink" ><Link to="/profile">Profile</Link></li>
+                                    <li className="rightLink" id="logOut" ><Link to='#' onClick={() => auth.logout()}>Log Out</Link></li>
 
-                            </Col>
+                                </>
+                            )
+                                : (<li className="rightlink" ><Link to='#' onClick={() => setShowModal(true)}>Login/Sign Up</Link></li>)}
+                        </ul>
 
-                        </Row>
-                    </Container>
+                    </Col>
 
-                {/* )} */}
+                </Row>
+                {/* </Container> */}
+
+
 
 
                 <button onClick={toggleNav} className="arrowbtn">▼</button>
