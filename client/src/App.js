@@ -11,7 +11,6 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Navbar from './components/Navbar/Navbar';
 import HomePage from './pages/HomePage';
 import NewsPage from './pages/NewsPage';
-import UserPage from './pages/UserPage';
 import StockPage from './pages/StockPage';
 import SymbolPage from './pages/SymbolPage'
 import CurrenciesPage from './pages/CurrenciesPage';
@@ -58,10 +57,6 @@ function App() {
               <Route
                 path='/news'
                 element={<NewsPage />}
-              />
-              <Route
-                path='/user'
-                element={<UserPage />}
               />
               <Route
                 path='/stocks'
