@@ -10,6 +10,7 @@ import auth from '../utils/auth';
 import { Modal, Form, Button } from 'react-bootstrap';
 import { savePortfolioIds, saveWatchlistId } from '../utils/localStorage';
 import "../css/GainerAndLoser.css"
+import { Card } from 'react-bootstrap';
 
 
 export default function SymbolPage() {
@@ -31,7 +32,7 @@ export default function SymbolPage() {
         fetch(`https://financialmodelingprep.com/api/v3/profile/${symbol}?apikey=430e3d658d7945141a85b4b5f2a6b7da`)
             .then(response => response.json())
             .then(function (data) {
-
+                
                 setSymbolDetails(data[0])
             });
         fetch(`https://financialmodelingprep.com/api/v3/historical-chart/4hour/${symbol}?apikey=430e3d658d7945141a85b4b5f2a6b7da`)
@@ -100,11 +101,37 @@ export default function SymbolPage() {
                 </header>
                 <div className='flexColumn'>
                     <div className='flexColumn'>
-                        <div>
+                        <div className='lineChart'>
                             {symbolLine.length > 0 ? <LineChart data={symbolLine} /> : ""}
                         </div>
                     </div>
 
+                </div>
+                <div>
+                    <Card>
+                        <Card.Header as="h5">{symbolDetails.symbol}</Card.Header>
+                        <Card.Body>
+                            <Card.Text>
+                               Description: {symbolDetails.description}
+                            </Card.Text>
+                            <Card.Text>
+                               Market Cap: {symbolDetails.mktCap}
+                               <br></br>
+                               Price: ${symbolDetails.price}
+                               <br></br>
+                               52 Week Range: {symbolDetails.range}
+                               <br></br>
+                               Daily Volume: {symbolDetails.volAvg}
+                               <br></br>
+                               Sector: {symbolDetails.sector}
+                               <br></br>
+                               Industry: {symbolDetails.industry}
+                               <br></br>
+                               CEO: {symbolDetails.ceo}
+                            </Card.Text>
+                            
+                        </Card.Body>
+                    </Card>
                 </div>
                 <Modal show={show} onHide={handleClose}>
                     <Modal.Header closeButton>
