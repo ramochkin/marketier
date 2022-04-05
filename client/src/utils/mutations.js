@@ -27,61 +27,61 @@ mutation addUser($name: String!, $email: String!, $password: String!) {
 `
 
 export const ADD_WATCHLIST = gql`
-mutation AddWatchlist($symbol: WatchlistInput!) {
-    addWatchlist(symbol: $symbol) {
-      name
-      email
+mutation addWatchlist($symbol: String!) {
+  addWatchlist(symbol: $symbol) {
+    _id
+    name
+    email
+    watchlist {
       _id
-      watchlist {
-        _id
-        symbol
-      }
+      symbol
     }
   }
+}
 `
 
 export const REMOVE_WATCHLIST = gql`
-mutation RemoveWatchlist($symbolId: ID!) {
-    removeWatchlist(symbolId: $symbolId) {
+mutation removeWatchlist($id: ID!) {
+  removeWatchlist(_id: $id) {
+    _id
+    name
+    email
+    watchlist {
       _id
-      name
-      email
-      watchlist {
-        _id
-        symbol
-      }
+      symbol
     }
   }
+}
 `
 
 export const ADD_PORTFOLIO = gql`
-mutation AddPortfolio($portfolioData: PortfolioInput!) {
-    addPortfolio(portfolioData: $portfolioData) {
+mutation addPortfolio($symbol: String!, $quantity: Int!, $purchasePrice: Float!) {
+  addPortfolio(symbol: $symbol, quantity: $quantity, purchasePrice: $purchasePrice) {
+    _id
+    name
+    email
+    portfolio {
       _id
-      name
-      email
-      portfolio {
-        _id
-        symbol
-        quantity
-        purchasePrice
-      }
+      symbol
+      quantity
+      purchasePrice
     }
   }
+}
 `
 
 export const REMOVE_PORTFOLIO = gql`
-mutation RemovePortfolio($portfolioId: ID!) {
-    removePortfolio(portfolioId: $portfolioId) {
+mutation removePortfolio($id: ID!) {
+  removePortfolio(_id: $id) {
+    _id
+    name
+    email
+    portfolio {
       _id
-      name
-      email
-      portfolio {
-        _id
-        symbol
-        quantity
-        purchasePrice
-      }
+      symbol
+      quantity
+      purchasePrice
     }
   }
+}
 `

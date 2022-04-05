@@ -45,9 +45,9 @@ const resolvers = {
             return { token, user };
         },
         addWatchlist: async (parent, { symbol }, context) => {
-
+            console.log('hit')
             if (context.user) {
-
+                console.log(symbol)
                 const watchlistItem = await User.findOneAndUpdate(
                     { _id: context.user._id },
                     { $push: { watchlist: { symbol } } },
