@@ -49,7 +49,7 @@ export default function SymbolPage() {
 
         try {
             const { data } = await addPortfolio({
-                // variables: { symbol: , quantity: , purchasePrice: }
+                variables: { symbol: userFormData.symbol , quantity: parseInt(userFormData.quantity), purchasePrice: parseFloat(userFormData.purchasePrice) }
             })
 
 
@@ -74,7 +74,7 @@ export default function SymbolPage() {
 
         try {
             const { data } = await addWatchlist({
-                variables: { symbol: symbolDetails.symbol }
+                variables: { symbol: symbolDetails.symbol}
             })
 
 
@@ -125,9 +125,9 @@ export default function SymbolPage() {
                         <Form.Group>
                             <Form.Label htmlFor='quantity'>How many shares do you own?</Form.Label>
                             <Form.Control
-                                type='text'
-                                placeholder='Symbol'
-                                name='symbol'
+                                type='number'
+                                placeholder='Quantity'
+                                name='quantity'
                                 onChange={handleInputChange}
                                 value={userFormData.quantity}
                                 required
@@ -135,9 +135,10 @@ export default function SymbolPage() {
                             <Form.Control.Feedback type='invalid'>Amount owned is required!</Form.Control.Feedback>
                         </Form.Group>
                         <Form.Group>
-                            <Form.Label htmlFor='symbol'>What was your purchase price?</Form.Label>
+                            <Form.Label htmlFor='purchasePrice'>What was your purchase price?</Form.Label>
                             <Form.Control
-                                type='text'
+                                type='number'
+                                step='0.01'
                                 placeholder='$'
                                 name='purchasePrice'
                                 onChange={handleInputChange}
