@@ -8,7 +8,9 @@ import { ADD_WATCHLIST, ADD_PORTFOLIO } from '../utils/mutations';
 import { useMutation } from '@apollo/client';
 import auth from '../utils/auth';
 import { Modal, Form, Button } from 'react-bootstrap';
+import { savePortfolioIds, saveWatchlistId } from '../utils/localStorage';
 import "../css/GainerAndLoser.css"
+
 
 export default function SymbolPage() {
     const { symbol } = useParams();
